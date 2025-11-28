@@ -26,7 +26,7 @@ public class CourseService{
         Student student = students.get(studentId);
         if ((student!=null) && (course!=null)){
         student.enroll(course);
-        }
+        }//null
     }//enrollstudent
 
     public void unEnrollStudent(String studentId, String courseId){
@@ -34,8 +34,8 @@ public class CourseService{
          Student student = students.get(studentId);
          if ((student!=null) && (course!=null)){
          student.unEnroll(course);
-         }
-    }
+         }//null
+    }//unenroll
 
     public void displayCourseInformation(String courseId){
         
@@ -56,7 +56,17 @@ public class CourseService{
     public void totalCredits(String studentId) {
     	Student student = students.get(studentId);
     	int credits =0;
-    }
+    	if (student!=null) {
+    	for (Course course : student.enrolledCourses) {
+    		credits += course.credits;
+    	}//foreach
+    	System.out.println("Total credits: " + credits);
+    	} else {
+    		
+    	}
+    	
+    	}//Totalcredist
+    
 
 
 }//class course service

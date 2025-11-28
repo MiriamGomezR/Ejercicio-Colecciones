@@ -5,6 +5,9 @@ public class Main{
 
         String courseId = "math_01";
         String studentId = "120120";
+        String courseId2 = "chem_01";
+        String studentId2 = "458787";
+        
         courseService.displayCourseInformation( courseId );
         courseService.displayStudentInformation( studentId);
 
